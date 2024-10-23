@@ -1,16 +1,23 @@
 import random
+print("🚀Welcome to Number Guessing Game🚀")
 
-number = []
+difficulty = input("Choose difficult : Type 'easy' or 'hard' : ").lower()
+numbers = []
 
-for n in range(1, 101):
-    number.append(n)
+if difficulty == "easy":
+    for number in range(1, 11):
+        numbers.append(number)
+    user = int(input("Guess a number between 1 to 10 :"))
+elif difficulty == "hard":
+    for number in range(1, 101):
+        numbers.append(number)
+    user = int(input("Guess a number between 1 to 100 :"))
+# print(numbers)
+    
+guess = random.choice(numbers)
+#print(guess)
 
-# print(number)
-user = int(input("Guess a number in 1 to 100 :"))
-
-guess = random.choice(number)
-
-if guess == user:
+if user== guess:
     print("You won⭐")
 else:
     print("You lose😭")
